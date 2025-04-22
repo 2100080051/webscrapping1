@@ -10,7 +10,7 @@ query = st.text_input("Ask a question:", placeholder="e.g. What is the latest up
 if st.button("Get Answer") and query:
     with st.spinner("Searching the web and generating an answer..."):
         try:
-            response = requests.post("https://flask-backend-rror.onrender.com", json={"query": query})
+            response = requests.post("https://flask-backend-by8v.onrender.com/ask", json={"query": query})
             if response.status_code == 200:
                 answer = response.json().get("answer")
                 st.success("Here's what I found:")
